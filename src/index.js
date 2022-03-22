@@ -14,13 +14,13 @@ app.use(express.static(staicPath));
 
 //Express app
 //get means to get data from the server
-app.get('/', (req,res)=>{
-    res.send("Welcome to the home page");
-});
+// app.get('/', (req,res)=>{
+//     res.send("Welcome to the home page");
+// });
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-//   });
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+  });
 
 //for the listening the server
 app.listen(port,( )=>{
