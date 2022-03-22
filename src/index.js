@@ -8,15 +8,15 @@ const port= 9000;
 
 // console.log(__dirname);  //path of dir that you working on
 const staicPath = path.join(__dirname ,"../public");
-express.static(staicPath);
+
 //express.static(path)
 app.use(express.static(staicPath));
 
 //Express app
 //get means to get data from the server
-// app.get('/', (req,res)=>{
-//     res.send("Welcome to the home page");
-// });
+app.get('/testing', (req,res)=>{
+    res.send("Welcome to the home page");
+});
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public', 'index.html'));
